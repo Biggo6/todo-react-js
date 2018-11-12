@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t biggo6/todo-react-js .
+
+script:
+  - docker run  biggo6/todo-react-js npm run test -- --coverage
